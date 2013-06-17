@@ -1,0 +1,30 @@
+#!/bin/sh
+
+TARGET=x86_64-w64-mingw32
+export CC="$TARGET-gcc -static-libgcc"
+export CXX="$TARGET-g++ -static-libgcc -static-libstdc++"
+export SDL_CFLAGS="`/home/cap/win/bin/sdl-config --cflags`"
+export SDL_LIBS="`/home/cap/win/bin/sdl-config --libs`"
+export LIBPNG_CFLAGS="`/home/cap/win/bin/libpng-config --cflags`"
+export LIBPNG_LIBS="`/home/cap/win/bin/libpng-config --ldflags`"
+
+../configure \
+    --enable-bmp=false \
+    --enable-gif=false \
+    --enable-jpg=false \
+    --enable-jpg-shared=false \
+    --enable-lbm=false \
+    --enable-pcx=false \
+    --enable-png \
+    --enable-png-shared \
+    --enable-pnm=false \
+    --enable-tga=false \
+    --enable-tif=false \
+    --enable-tif-shared=false \
+    --enable-xcf=false \
+    --enable-xpm=false \
+    --enable-xv=false \
+    --enable-webp=false \
+    --enable-webp-shared=false \
+    --target=$TARGET --host=$TARGET \
+    --prefix=/home/cap/win $*

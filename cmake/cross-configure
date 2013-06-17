@@ -1,0 +1,3 @@
+cmake -DCMAKE_TOOLCHAIN_FILE=/home/cap/src/dev/cmake/toolchain-mingw.cmake \
+      -DCMAKE_INSTALL_PREFIX=/home/cap/win \
+      ..

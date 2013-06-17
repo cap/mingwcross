@@ -1,0 +1,8 @@
+#!/bin/sh
+
+TARGET=x86_64-w64-mingw32
+export CC="$TARGET-gcc -static-libgcc"
+export CXX="$TARGET-g++ -static-libgcc -static-libstdc++"
+../configure \
+    --target=$TARGET --host=$TARGET \
+    --prefix=/home/cap/win $*
